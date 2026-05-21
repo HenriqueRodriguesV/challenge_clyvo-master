@@ -1,0 +1,15 @@
+flowchart LR
+    Tutor[Usuário / Tutor do Pet] -->|Sintomas em linguagem natural| API[API Spring Boot - Clyvo/Olli Pet]
+    API --> CRUD[CRUD: Responsáveis, Pets, Veterinários e Prontuários]
+    API --> IA[Camada conceitual de IA Multiagente]
+    IA --> TRIAGEM[Agente de Triagem e Urgência]
+    IA --> PERFIL[Digital Twin comportamental do pet]
+    IA --> MATCH[Agente de recomendação de clínica]
+    SENSORES[Coleira / sensores IoT] --> IA
+    API --> H2[(Banco H2 TCP em container)]
+    H2 --> VOLUME[(Volume nomeado clyvo-h2-data)]
+    API --> DOCKER[Container API sem usuário root]
+    H2 --> DOCKERDB[Container Banco H2]
+    DOCKER --> VM[VM Linux Azure]
+    DOCKERDB --> VM
+    VM --> INTERNET[Testes externos via IP público: 8080 / 8082]

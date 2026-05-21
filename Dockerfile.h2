@@ -1,0 +1,14 @@
+FROM eclipse-temurin:21-jre-jammy
+ARG H2_VERSION=2.2.224
+WORKDIR /opt/h2
+RUN groupadd -r h2group && useradd -r -g h2group -d /data/h2 -s /usr/sbin/nologin h2user \
+    && mkdir -p /opt/h2 /data/h2 \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends curl ca-certificates \
+    && curl -fsSL "https://repo1.maven.org/maven2/com/h2database/h2/${H2_VERSION}/h2-${H2_VERSION}.jar" -o /opt/h2/h2.jar \
+    && apt-get purge -y --auto-remove curl \
+    && rm -rf /var/lib/apt/lists/* \
+    && chown -R h2user:h2group /opt/h2 /data/h2
+USER h2user
+EXPOSE 9092 8082
+ENTRYPOINT ["java", "-cp", "/opt/h2/h2.jar", "org.h2.tools.Server", "-tcp", "-tcpAllowOthers", "-tcpPort", "9092", "-web", "-webAllowOthers", "-webPort", "8082", "-ifNotExists", "-baseDir", "/data/h2"]
