@@ -2,7 +2,7 @@
 set -euo pipefail
 
 RG="rg-clyvo-devops"
-LOCATION="brazilsouth"
+LOCATION="eastus"
 VM_NAME="vm-clyvo-devops"
 ADMIN_USER="azureuser"
 IMAGE="Ubuntu2204"
