@@ -2,11 +2,11 @@
 set -euo pipefail
 
 RG="rg-clyvo-devops"
-LOCATION="westus2"
+LOCATION="eastus"
 VM_NAME="vm-clyvo-devops"
 ADMIN_USER="azureuser"
 IMAGE="Ubuntu2204"
-SIZE="Standard_B1s"
+SIZE="Standard_D2s_v5"
 REPO_URL="https://github.com/HenriqueRodriguesV/challenge_clyvo-master"
 
 az group create --name "$RG" --location "$LOCATION"
