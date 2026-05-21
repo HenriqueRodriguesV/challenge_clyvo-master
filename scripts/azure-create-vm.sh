@@ -6,7 +6,7 @@ LOCATION="eastus"
 VM_NAME="vm-clyvo-devops"
 ADMIN_USER="azureuser"
 IMAGE="Ubuntu2204"
-SIZE="Standard_B2s"
+SIZE="Standard_B1s"
 REPO_URL="https://github.com/HenriqueRodriguesV/challenge_clyvo-master"
 
 az group create --name "$RG" --location "$LOCATION"
