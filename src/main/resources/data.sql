@@ -13,3 +13,8 @@ MERGE INTO pet (id_pet, nome, descricao, raca, data_nasc, id_resp) KEY(id_pet) V
 MERGE INTO prontuario (id_prontuario, procedimento, data_procedimento, local_atendimento, id_pet, id_med_vet) KEY(id_prontuario) VALUES
 (1, 'Triagem inicial por sintomas: coceira intensa e irritação na pele. Encaminhamento para dermatologia veterinária.', '2026-05-20', 'Clínica Parceira Clyvo - Unidade Santana', 1, 1),
 (2, 'Consulta preventiva com avaliação de hidratação, apetite e comportamento. Recomendado acompanhamento renal.', '2026-05-20', 'Clínica Parceira Clyvo - Unidade Tucuruvi', 2, 2);
+
+ALTER TABLE responsavel ALTER COLUMN id RESTART WITH 3;
+ALTER TABLE med_vet ALTER COLUMN id RESTART WITH 3;
+ALTER TABLE pet ALTER COLUMN id_pet RESTART WITH 3;
+ALTER TABLE prontuario ALTER COLUMN id_prontuario RESTART WITH 3;
