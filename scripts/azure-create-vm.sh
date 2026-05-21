@@ -16,6 +16,7 @@ az vm create \
   --name "$VM_NAME" \
   --image "$IMAGE" \
   --size "$SIZE" \
+  --zone 1 \
   --admin-username "$ADMIN_USER" \
   --generate-ssh-keys \
   --public-ip-sku Standard
