@@ -7,7 +7,7 @@ VM_NAME="vm-clyvo-devops"
 ADMIN_USER="azureuser"
 IMAGE="Ubuntu2204"
 SIZE="Standard_B2s"
-REPO_URL="COLE_AQUI_O_LINK_DO_SEU_REPOSITORIO_GITHUB"
+REPO_URL="https://github.com/HenriqueRodriguesV/challenge_clyvo-master"
 
 az group create --name "$RG" --location "$LOCATION"
 
