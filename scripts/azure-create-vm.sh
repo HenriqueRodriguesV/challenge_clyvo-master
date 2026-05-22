@@ -1,4 +1,3 @@
-cat > scripts/azure-create-vm.sh <<'EOF'
 #!/usr/bin/env bash
 set -euo pipefail
 
@@ -84,4 +83,3 @@ az vm show \
   --show-details \
   --query publicIps \
   -o tsv
-EOF
