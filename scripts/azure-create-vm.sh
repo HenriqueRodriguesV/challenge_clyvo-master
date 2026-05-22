@@ -6,7 +6,7 @@ LOCATION="northcentralus"
 VM_NAME="vm-clyvo-henrique"
 ADMIN_USER="azureuser"
 IMAGE="Ubuntu2204"
-SIZE="Standard_B2s"
+SIZE="Standard_D2s_v3"
 REPO_URL="https://github.com/HenriqueRodriguesV/challenge_clyvo-master.git"
 
 echo "Criando Resource Group..."
@@ -23,13 +23,6 @@ az vm create \
   --admin-username "$ADMIN_USER" \
   --generate-ssh-keys \
   --public-ip-sku Standard
-
-echo "Abrindo portas necessárias..."
-az vm open-port \
-  --resource-group "$RG" \
-  --name "$VM_NAME" \
-  --port 22 \
-  --priority 1000
 
 az vm open-port \
   --resource-group "$RG" \
