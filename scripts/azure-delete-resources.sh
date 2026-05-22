@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-RG="rg-clyvo-devops"
+RG="rg-clyvo-henrique"
 
-az group delete --name "$RG" --yes --no-wait
+echo "Solicitando remoção do Resource Group: $RG"
 
-echo "Solicitada a remoção do Resource Group $RG. Tire print dessa execução e do Portal Azure para anexar no PDF."
+az group delete \
+  --name "$RG" \
+  --yes \
+  --no-wait
+
+echo "Remoção solicitada. Tire print deste terminal e depois confirme no Portal Azure que os recursos foram removidos."
