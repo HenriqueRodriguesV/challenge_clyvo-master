@@ -1,3 +1,4 @@
+cat > scripts/azure-create-vm.sh <<'EOF'
 #!/usr/bin/env bash
 set -euo pipefail
 
@@ -24,6 +25,7 @@ az vm create \
   --generate-ssh-keys \
   --public-ip-sku Standard
 
+echo "Abrindo portas necessárias ao projeto..."
 az vm open-port \
   --resource-group "$RG" \
   --name "$VM_NAME" \
@@ -36,7 +38,7 @@ az vm open-port \
   --port 8082 \
   --priority 1020
 
-echo "Instalando Docker, Git, Nano e ferramentas na VM..."
+echo "Instalando Docker, Git, Nano, JQ e ferramentas na VM..."
 az vm run-command invoke \
   --resource-group "$RG" \
   --name "$VM_NAME" \
@@ -82,3 +84,4 @@ az vm show \
   --show-details \
   --query publicIps \
   -o tsv
+EOF

@@ -1,3 +1,4 @@
+cat > docker-compose.yml <<'EOF'
 services:
   h2-db:
     build:
@@ -39,3 +40,4 @@ volumes:
 networks:
   clyvo-net:
     name: clyvo-net
+EOF
