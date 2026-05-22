@@ -8,10 +8,10 @@ O projeto representa a base operacional da plataforma **Clyvo / Olli Pet**, uma 
 
 ## Link do vídeo da entrega
 
-> **Cole aqui o link do vídeo no YouTube após a gravação:**
+```
 
-```text
-LINK_DO_VIDEO_YOUTUBE_AQUI
+https://youtu.be/rt-N-L6Hl_Q
+
 ```
 
 ---
@@ -552,7 +552,7 @@ Teste Persistencia Azure
 
 ## Remoção obrigatória dos recursos em nuvem
 
-Ao final da entrega, é obrigatório remover os recursos criados na Azure.
+Ao final da entrega, é obrigatório remover os recursos criados na Azure e isso foi feito e provado no PDF.
 
 Script de remoção:
 
@@ -567,9 +567,6 @@ chmod +x scripts/azure-delete-resources.sh
 ./scripts/azure-delete-resources.sh
 ```
 
-O script remove o Resource Group usado na entrega, apagando a VM e os recursos associados.
-
-Guarde o print da exclusão para anexar no PDF final.
 
 ---
 
