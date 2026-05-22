@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-RG="rg-clyvo-devops"
-LOCATION="eastus"
-VM_NAME="vm-clyvo-devops"
+RG="rg-clyvo-henrique"
+LOCATION="northcentralus"
+VM_NAME="vm-clyvo-henrique"
 ADMIN_USER="azureuser"
 IMAGE="Ubuntu2204"
-SIZE="Standard_D2s_v5"
+SIZE="Standard_B2ats_v2"
 REPO_URL="https://github.com/HenriqueRodriguesV/challenge_clyvo-master"
 
 az group create --name "$RG" --location "$LOCATION"
@@ -16,7 +16,6 @@ az vm create \
   --name "$VM_NAME" \
   --image "$IMAGE" \
   --size "$SIZE" \
-  --zone 1 \
   --admin-username "$ADMIN_USER" \
   --generate-ssh-keys \
   --public-ip-sku Standard
